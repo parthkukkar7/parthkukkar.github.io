@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parth Kukkar — Strategic Account Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Jost:wght@300;400;500;600&family=Jost:ital,wght@1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --white:#ffffff;
+  --off:#f9f8f5;
+  --off2:#f2f0ea;
+  --ink:#1a1a18;
+  --ink2:#4a4a44;
+  --ink3:#8a8a80;
+  --green:#2d6a4f;
+  --green-light:#52b788;
+  --green-pale:#d8f3dc;
+  --green-mid:#b7e4c7;
+  --gold:#b5893a;
+  --border:#e8e6de;
+  --border2:#d4d1c5;
+  --r:6px;
+  --r2:12px;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.04);
+  --shadow2:0 2px 8px rgba(0,0,0,0.08),0 8px 32px rgba(0,0,0,0.06);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--green-pale);color:var(--green)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--off)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 56px;height:64px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s ease;
+}
+nav.scrolled{box-shadow:var(--shadow)}
+.nav-logo{
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--ink);text-decoration:none;letter-spacing:-0.3px;
+}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{
+  font-size:13px;font-weight:500;letter-spacing:0.4px;
+  color:var(--ink2);text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-contact{
+  font-size:13px !important;padding:8px 20px;
+  background:var(--green) !important;color:var(--white) !important;
+  border-radius:var(--r);font-weight:500 !important;
+  transition:opacity 0.2s !important;
+}
+.nav-contact:hover{opacity:0.88}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-ham span{width:22px;height:1.5px;background:var(--ink);display:block;transition:0.3s}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  padding:100px 56px 80px;gap:80px;
+  background:var(--white);
+  position:relative;
+}
+.hero::after{
+  content:'';position:absolute;right:0;top:0;bottom:0;width:42%;
+  background:var(--off);
+  z-index:0;
+}
+.hero-left{position:relative;z-index:1}
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:24px}
+.hero-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--green);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--green)}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,5.5vw,72px);
+  font-weight:700;line-height:1.08;
+  letter-spacing:-1.5px;color:var(--ink);
+  margin-bottom:28px;
+}
+h1 em{font-style:italic;color:var(--green)}
+.hero-summary{
+  font-size:17px;font-weight:300;color:var(--ink2);
+  line-height:1.75;margin-bottom:40px;max-width:520px;
+}
+.hero-summary strong{font-weight:500;color:var(--ink)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:var(--r);
+  font-size:14px;font-weight:500;cursor:pointer;
+  text-decoration:none;border:none;font-family:'Jost',sans-serif;
+  transition:all 0.2s;
+}
+.btn-primary{background:var(--green);color:var(--white)}
+.btn-primary:hover{background:#235c43;transform:translateY(-1px);box-shadow:0 4px 16px rgba(45,106,79,0.25)}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--ink2)}
+.btn-outline:hover{border-color:var(--green);color:var(--green)}
+
+/* HERO RIGHT CARDS */
+.hero-stat-card{
+  background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r2);
+  padding:24px 28px;box-shadow:var(--shadow);
+  transition:box-shadow 0.25s;
+}
+.hero-stat-card:hover{box-shadow:var(--shadow2)}
+.hsc-num{
+  font-family:'Playfair Display',serif;
+  font-size:42px;font-weight:700;color:var(--ink);
+  line-height:1;letter-spacing:-1.5px;margin-bottom:4px;
+}
+.hsc-num span{color:var(--green)}
+.hsc-label{font-size:13px;color:var(--ink3);font-weight:400;margin-bottom:10px}
+.hsc-desc{font-size:14px;color:var(--ink2);font-weight:300;line-height:1.5;font-style:italic}
+
+/* SECTIONS SHARED */
+section{padding:96px 56px}
+.section-intro{max-width:600px;margin-bottom:64px}
+.eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--green);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--green)}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,3.5vw,46px);font-weight:700;
+  line-height:1.1;letter-spacing:-1px;margin-bottom:18px;
+}
+.section-lead{font-size:16px;color:var(--ink2);font-weight:300;line-height:1.75}
+.section-lead strong{font-weight:500;color:var(--ink)}
+
+/* WHY HIRE ME */
+#why{background:var(--off)}
+.why-layout{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+.why-sticky{position:sticky;top:88px}
+.why-list{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.why-item{
+  background:var(--white);
+  padding:28px 32px;
+  display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;
+  transition:background 0.2s;cursor:default;
+}
+.why-item:hover{background:#fcfbf8}
+.why-num{
+  font-family:'Playfair Display',serif;
+  font-size:13px;color:var(--green);font-weight:600;
+  padding-top:2px;
+}
+.why-content h3{font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-0.2px}
+.why-content p{font-size:14px;color:var(--ink2);font-weight:300;line-height:1.7}
+.why-content .metric{
+  margin-top:12px;font-size:13px;color:var(--green);font-weight:500;
+  display:flex;align-items:center;gap:6px;
+}
+.why-content .metric::before{content:'↗';font-size:11px}
+
+/* IMPACT */
+#impact{background:var(--white)}
+.impact-intro-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;
+  margin-bottom:64px;align-items:center;
+}
+.impact-story{font-size:16px;font-weight:300;color:var(--ink2);line-height:1.85}
+.impact-story p{margin-bottom:16px}
+.impact-story p:last-child{margin-bottom:0}
+.impact-story strong{font-weight:500;color:var(--ink)}
+.impact-story em{font-style:italic;color:var(--green)}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.kpi-item{
+  background:var(--white);padding:32px 28px;
+  transition:background 0.2s;cursor:default;
+}
+.kpi-item:hover{background:var(--off)}
+.kpi-number{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:700;color:var(--ink);
+  line-height:1;letter-spacing:-1px;margin-bottom:8px;
+}
+.kpi-number span{color:var(--green)}
+.kpi-label{font-size:13px;color:var(--ink3);font-weight:400;margin-bottom:10px;line-height:1.4}
+.kpi-bar{height:2px;background:var(--border);overflow:hidden}
+.kpi-fill{height:100%;background:var(--green);width:0;transition:width 1.4s cubic-bezier(0.4,0,0.2,1)}
+
+/* CAREER */
+#career{background:var(--off)}
+.career-item{
+  display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;
+  padding:48px 0;border-bottom:1px solid var(--border);
+}
+.career-item:first-of-type{padding-top:0}
+.career-item:last-of-type{border-bottom:none;padding-bottom:0}
+.career-left{}
+.career-company{
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--ink);margin-bottom:4px;letter-spacing:-0.3px;
+}
+.career-period{font-size:12px;color:var(--green);font-weight:500;letter-spacing:0.5px;margin-bottom:4px}
+.career-role{font-size:13px;color:var(--ink3);font-weight:400}
+.career-right{}
+.career-narrative{
+  font-size:16px;font-weight:300;color:var(--ink2);line-height:1.85;
+  margin-bottom:28px;word-wrap:break-word;overflow-wrap:break-word;
+}
+.career-narrative strong{font-weight:500;color:var(--ink)}
+.career-narrative em{font-style:italic;color:var(--green)}
+.career-wins{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;
+  margin-bottom:24px;
+}
+.win-card{
+  padding:20px;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r);
+}
+.win-num{
+  font-family:'Playfair Display',serif;font-size:24px;font-weight:700;
+  color:var(--green);line-height:1;margin-bottom:4px;letter-spacing:-0.5px;
+}
+.win-desc{font-size:12px;color:var(--ink3);font-weight:400;line-height:1.4}
+.account-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-size:12px;padding:4px 12px;border-radius:3px;
+  background:var(--off2);color:var(--ink2);font-weight:400;
+  border:1px solid var(--border);
+  transition:all 0.15s;cursor:default;
+}
+.tag:hover{background:var(--green-pale);color:var(--green);border-color:var(--green-mid)}
+
+/* HOW I WORK */
+#how{background:var(--white)}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.how-card{
+  background:var(--white);padding:40px;
+  position:relative;overflow:hidden;
+  transition:background 0.2s;cursor:default;
+}
+.how-card:hover{background:var(--off)}
+.how-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--green);
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform 0.3s ease;
+}
+.how-card:hover::before{transform:scaleY(1)}
+.how-n{
+  font-family:'Playfair Display',serif;
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  color:var(--green);text-transform:uppercase;margin-bottom:14px;
+}
+.how-card h3{font-size:18px;font-weight:600;letter-spacing:-0.3px;margin-bottom:12px}
+.how-card p{font-size:14px;color:var(--ink2);font-weight:300;line-height:1.75}
+
+/* INDUSTRIES */
+#industries{background:var(--off)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.ind-item{
+  background:var(--white);padding:32px 28px;
+  transition:background 0.2s;cursor:default;
+}
+.ind-item:hover{background:#f0faf4}
+.ind-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-0.2px}
+.ind-desc{font-size:13px;color:var(--ink3);font-weight:400;line-height:1.5}
+.ind-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--green);
+  margin-bottom:16px;
+}
+
+/* QUICK SCAN */
+#scan{background:var(--green)}
+#scan .eyebrow{color:var(--green-light)}
+#scan .eyebrow::before{background:var(--green-light)}
+#scan h2{color:var(--white)}
+#scan .section-lead{color:rgba(255,255,255,0.65)}
+.scan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.1)}
+.scan-item{background:rgba(255,255,255,0.04);padding:28px 24px;transition:background 0.2s;cursor:default}
+.scan-item:hover{background:rgba(255,255,255,0.08)}
+.scan-q{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:500;margin-bottom:10px}
+.scan-a{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.3}
+.scan-sub{font-size:12px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.4}
+
+/* LEADERSHIP */
+#leadership{background:var(--white)}
+.leader-layout{display:grid;grid-template-columns:2fr 1fr;gap:48px}
+.trait-list{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.trait{background:var(--white);padding:24px 28px;display:flex;gap:20px;align-items:flex-start;transition:background 0.2s}
+.trait:hover{background:var(--off)}
+.trait-icon-wrap{
+  width:40px;height:40px;border-radius:var(--r);
+  background:var(--green-pale);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:18px;
+}
+.trait h4{font-size:15px;font-weight:600;margin-bottom:4px}
+.trait p{font-size:13px;color:var(--ink2);font-weight:300;line-height:1.6}
+.football-card{
+  background:var(--green);border-radius:var(--r2);
+  padding:36px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:360px;
+}
+.football-card::before{
+  content:'⚽';font-size:160px;position:absolute;
+  bottom:-30px;right:-30px;opacity:0.07;pointer-events:none;
+  line-height:1;
+}
+.football-eyebrow{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);font-weight:500;margin-bottom:8px;
+}
+.football-title{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--white);line-height:1.3;margin-bottom:24px;
+}
+.football-big{
+  font-family:'Playfair Display',serif;font-size:72px;font-weight:700;
+  color:var(--white);line-height:1;letter-spacing:-3px;
+}
+.football-sub{font-size:14px;color:rgba(255,255,255,0.65);margin-top:8px;font-weight:300}
+.football-body{font-size:13px;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.6;margin-top:20px}
+.football-body strong{color:var(--white);font-weight:500}
+
+/* CONTACT */
+#contact{background:var(--off);text-align:center}
+.contact-inner{max-width:620px;margin:0 auto}
+.contact-cta{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4.5vw,56px);font-weight:700;
+  line-height:1.1;letter-spacing:-1.5px;margin:40px 0 24px;
+}
+.contact-cta em{font-style:italic;color:var(--green)}
+.contact-sub{font-size:17px;color:var(--ink2);font-weight:300;line-height:1.75;margin-bottom:44px}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.contact-details{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.contact-details a{
+  font-size:13px;color:var(--ink3);text-decoration:none;font-weight:400;
+  letter-spacing:0.2px;transition:color 0.2s;
+}
+.contact-details a:hover{color:var(--green)}
+
+/* FOOTER */
+footer{
+  padding:28px 56px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--ink3);flex-wrap:wrap;gap:12px;
+}
+footer a{color:var(--ink3);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--green)}
+footer .footer-links{display:flex;gap:24px}
+
+/* ANIMATE */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* SECTION MATRIX */
+.matrix{background:var(--ink);padding:56px}
+.matrix-label{
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--green-light);margin-bottom:32px;
+  display:flex;align-items:center;gap:10px;
+}
+.matrix-label::before{content:'';display:block;width:20px;height:1px;background:var(--green-light)}
+.matrix-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);
+}
+.matrix-card{
+  background:rgba(255,255,255,0.02);padding:28px 24px;
+  text-decoration:none;display:flex;flex-direction:column;gap:6px;
+  transition:background 0.2s;
+}
+.matrix-card:hover{background:rgba(255,255,255,0.07)}
+.matrix-num{font-family:'Playfair Display',serif;font-size:11px;color:var(--green-light);font-weight:600;letter-spacing:1px}
+.matrix-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-0.3px}
+.matrix-desc{font-size:12px;color:rgba(255,255,255,0.38);font-weight:300;line-height:1.5;margin-top:4px}
+.matrix-arrow{font-size:13px;color:var(--green-light);margin-top:10px;display:inline-block;transition:transform 0.2s}
+.matrix-card:hover .matrix-arrow{transform:translateX(5px)}
+
+/* BRAND LOGOS */
+.brand-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.brand-logo{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 18px;border:1px solid var(--border);border-radius:8px;
+  background:var(--white);
+  transition:all 0.18s;cursor:default;white-space:nowrap;
+  box-shadow:var(--shadow);
+}
+.brand-logo:hover{border-color:var(--green-mid);box-shadow:var(--shadow2);transform:translateY(-2px)}
+.brand-logo img{
+  width:28px;height:28px;object-fit:contain;
+  border-radius:4px;flex-shrink:0;
+}
+.brand-logo span{
+  font-size:13px;font-weight:600;color:var(--ink2);
+  font-family:'Jost',sans-serif;letter-spacing:0.2px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;top:64px;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--border);
+    padding:24px 20px;gap:24px;z-index:199;
+  }
+  .nav-ham{display:flex}
+  .hero{grid-template-columns:1fr;padding:90px 20px 60px;gap:40px}
+  .hero::after{display:none}
+  section{padding:72px 20px}
+  .matrix{padding:40px 20px}
+  .matrix-grid{grid-template-columns:repeat(2,1fr)}
+  .why-layout{grid-template-columns:1fr;gap:40px}
+  .why-sticky{position:static}
+  .impact-intro-block{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .career-item{grid-template-columns:1fr;gap:20px}
+  .career-wins{grid-template-columns:1fr 1fr}
+  .how-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .scan-grid{grid-template-columns:repeat(2,1fr)}
+  .leader-layout{grid-template-columns:1fr}
+  footer{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#"><span>P</span>arth Kukkar</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#why">Value</a>
+    <a href="#impact">Impact</a>
+    <a href="#career">Career</a>
+    <a href="#how">Approach</a>
+    <a href="#scan">Profile</a>
+    <a href="#contact" class="btn btn-primary nav-contact">Get in Touch</a>
+  </div>
+  <div class="nav-ham" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Strategic Account Manager · B2B · FMCG · APAC & MEA</div>
+    <h1>Focused on<br>the work.<br><em>The results follow.</em></h1>
+    <p class="hero-summary">
+      5.5 years in B2B commercial roles across FMCG, dairy, beverage, and process industries. I've been fortunate to work with some remarkable brands — <strong>AMUL, Parle Agro, HUL, ITC</strong> — and learn what it takes to build relationships and pipelines that genuinely last.
+    </p>
+    <div class="hero-actions">
+      <a href="#impact" class="btn btn-primary">See the impact</a>
+      <a href="#career" class="btn btn-outline">Career journey</a>
+      <a href="https://www.linkedin.com/in/parth-kukkar-08a933136/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-card">
+      <div class="hsc-num">₹100<span>Cr+</span></div>
+      <div class="hsc-label">Commercial pipeline built — Tetra Pak India</div>
+      <div class="hsc-desc">"Building a pipeline isn't about the number — it's about understanding each customer's growth agenda well enough to see where they're going before they do."</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">60<span>%</span></div>
+      <div class="hsc-label">YoY revenue growth — Kadant APAC & MEA</div>
+      <div class="hsc-desc">"Growth at this scale comes from the team, the structure, and the relationships. I'm grateful to have had all three."</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">10</div>
+      <div class="hsc-label">International markets — active today</div>
+      <div class="hsc-desc">"Every market teaches you something different about how people make decisions. That's been one of the most valuable parts of this journey."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION MATRIX -->
+<div class="matrix">
+  <div class="matrix-label">Find what's relevant to you</div>
+  <div class="matrix-grid">
+    <a href="#why" class="matrix-card">
+      <div class="matrix-num">01</div>
+      <div class="matrix-title">Why Hire Me</div>
+      <div class="matrix-desc">Eight commercially-grounded reasons. Evidence, not adjectives.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#impact" class="matrix-card">
+      <div class="matrix-num">02</div>
+      <div class="matrix-title">Impact</div>
+      <div class="matrix-desc">The numbers. ₹100 Cr+ pipelines, 60% growth, 8 KPIs.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#career" class="matrix-card">
+      <div class="matrix-num">03</div>
+      <div class="matrix-title">Career</div>
+      <div class="matrix-desc">Kadant · Tetra Pak · Hero MotoCorp. Challenge, action, result.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#how" class="matrix-card">
+      <div class="matrix-num">04</div>
+      <div class="matrix-title">How I Work</div>
+      <div class="matrix-desc">Six commercial principles. Built from real execution.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#industries" class="matrix-card">
+      <div class="matrix-num">05</div>
+      <div class="matrix-title">Industries</div>
+      <div class="matrix-desc">Dairy, beverage, FMCG, packaging, process — genuine depth.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#scan" class="matrix-card">
+      <div class="matrix-num">06</div>
+      <div class="matrix-title">Quick Profile</div>
+      <div class="matrix-desc">Everything a recruiter needs. Under 60 seconds.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#leadership" class="matrix-card">
+      <div class="matrix-num">07</div>
+      <div class="matrix-title">Leadership</div>
+      <div class="matrix-desc">Mindset, traits, and the competitive DNA behind the numbers.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+    <a href="#contact" class="matrix-card">
+      <div class="matrix-num">08</div>
+      <div class="matrix-title">Let's Talk</div>
+      <div class="matrix-desc">Open to the right opportunity. Get in touch directly.</div>
+      <div class="matrix-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<!-- WHY HIRE ME -->
+<section id="why">
+  <div class="why-layout">
+    <div class="why-sticky">
+      <div class="section-intro reveal">
+        <div class="eyebrow">Value Proposition</div>
+        <h2>What I bring to the table</h2>
+        <p class="section-lead">
+          A few things I've worked hard to develop over the years — through real accounts, real deals, and a lot of learning along the way.
+        </p>
+      </div>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h3>Long-term account thinking</h3>
+          <p>I try to understand where a customer is going — not just what they need today. That means building account plans that look 12–36 months ahead, with cross-sell and expansion mapped out early.</p>
+          <div class="metric">₹100 Cr+ pipeline built at Tetra Pak</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h3>Genuine FMCG & beverage knowledge</h3>
+          <p>Having worked closely with brands like AMUL, HUL, and Parle Agro, I've developed a real understanding of how these businesses think, buy, and grow. It's knowledge that only comes from being in the room.</p>
+          <div class="metric">20+ new accounts onboarded across dairy, jNSD, spirits, desserts</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h3>Consistent revenue delivery</h3>
+          <p>I've been fortunate to hit and exceed targets across both my roles. I attribute that mostly to preparation, structure, and the quality of relationships built over time — not individual brilliance.</p>
+          <div class="metric">Capital: €3M → €5M &nbsp;·&nbsp; After-sales: €3M → €4M</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h3>Working well across functions</h3>
+          <p>Some of the most valuable work I've done has been internal — aligning R&D, engineering, supply chain, and leadership teams before a proposal reaches the customer. Good commercial outcomes rarely happen in isolation.</p>
+          <div class="metric">New product launches with Parle Agro & AMUL</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">05</div>
+        <div class="why-content">
+          <h3>Comfortable working internationally</h3>
+          <p>Managing accounts across APAC and MEA has taught me a great deal about listening carefully and adapting — every market has its own rhythm, and respecting that matters more than any sales technique.</p>
+          <div class="metric">10 international markets managed today</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">06</div>
+        <div class="why-content">
+          <h3>Building systems that outlast the deal</h3>
+          <p>I like leaving things better than I found them. The Prospect Qualification Forum at Kadant wasn't just a tool for me — it was built to be something the team could rely on long after a specific deal closed.</p>
+          <div class="metric">Capital sales scaled from €3M to €5M using this system</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">07</div>
+        <div class="why-content">
+          <h3>Selling on value, not price</h3>
+          <p>I've always believed that if you understand a customer's business well enough, price becomes a secondary conversation. The goal is to make the ROI obvious — and then the deal takes care of itself.</p>
+          <div class="metric">₹35 Cr in capital deals — consultative, not transactional</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">08</div>
+        <div class="why-content">
+          <h3>Always looking to improve the process</h3>
+          <p>Beyond the commercial work, I find it rewarding to spot inefficiencies and fix them. At Kadant, reducing quotation turnaround by 75% through digital tools was as satisfying as closing a deal.</p>
+          <div class="metric">75% faster quotation turnaround through process reform</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-intro reveal">
+    <div class="eyebrow">Metrics that matter</div>
+    <h2>The impact, in numbers</h2>
+  </div>
+  <div class="impact-intro-block reveal">
+    <div class="impact-story">
+      <p>These numbers represent five and a half years of work across two very different industries. I share them not to impress, but because they give an honest picture of the commercial environments I've operated in.</p>
+      <p>At Tetra Pak, I had the opportunity to work with some of India's most respected FMCG and dairy brands — closing <em>₹35 Crores in capital deals</em>, building a ₹100 Cr+ pipeline, and contributing to cross-sell initiatives that generated ₹18 Crores. None of it was possible without strong teams and genuinely good customer relationships.</p>
+      <p>At Kadant, taking on P&L ownership across 23 accounts in 10 markets was a steep learning curve — one I'm grateful for. The 60% YoY growth was a team effort, built on structure, trust, and a lot of listening.</p>
+      <p>The frameworks and systems I put in place are still being used. That, more than the numbers, is what I'm most proud of.</p>
+    </div>
+    <div>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="60"><span>0</span>%</div>
+          <div class="kpi-label">YoY revenue growth, Kadant APAC & MEA</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="60"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="100">₹<span>0</span>Cr+</div>
+          <div class="kpi-label">Pipeline built, Tetra Pak India</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="88"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="35">₹<span>0</span>Cr</div>
+          <div class="kpi-label">Capital deals closed, Tetra Pak</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="70"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="23"><span>0</span></div>
+          <div class="kpi-label">Multinational accounts, active</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="77"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="18">₹<span>0</span>Cr</div>
+          <div class="kpi-label">Cross-sell incremental revenue</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="60"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="75"><span>0</span>%</div>
+          <div class="kpi-label">Faster quotation turnaround</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="75"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="10"><span>0</span></div>
+          <div class="kpi-label">International markets managed</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="67"></div></div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number" data-target="30"><span>0</span>%</div>
+          <div class="kpi-label">YoY FMCG account growth, Tetra Pak</div>
+          <div class="kpi-bar"><div class="kpi-fill" data-w="50"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="section-intro reveal">
+    <div class="eyebrow">Professional journey</div>
+    <h2>Where I've been.<br>What I built.</h2>
+    <p class="section-lead">Each role, in full context — the challenge, the approach, the outcome.</p>
+  </div>
+
+  <div class="career-item reveal">
+    <div class="career-left">
+      <div class="career-company">Kadant Lamort</div>
+      <div class="career-period">Jan 2024 — Present</div>
+      <div class="career-role">Area Sales Manager, APAC & MEA</div>
+    </div>
+    <div class="career-right">
+      <p class="career-narrative">
+        Kadant required someone who could operate with P&L accountability across a fragmented international portfolio — 23 multinational accounts spanning 10 markets — while simultaneously leading a <strong>7-member cross-functional team</strong> and a 5-member agent network across divisions and countries. The mandate was clear: strengthen the customer base and exceed targets. <strong>I built two things in parallel: a growth framework and a process improvement system.</strong>
+      </p>
+      <p class="career-narrative">
+        On the commercial side, I introduced the <em>Prospect Qualification Forum</em> — a structured discipline for qualifying and prioritising opportunities — paired with Key Account Plans that gave each relationship a 12–24 month commercial roadmap. In 2024, I hit <strong>100% of the annual revenue target</strong> — ₹30 Crore for capital sales and ₹39 Crore for after-sales components. Applying the Pareto principle to after-sales, I re-strategised the approach and achieved <strong>105% of target</strong>, scaling from €3M to €4M. Capital sales grew from €3M to €5M through 5 closed capital projects, delivering ₹39 Crore in incremental sales. The team is currently tracking at <strong>120% of the 2025 target.</strong>
+      </p>
+      <p class="career-narrative">
+        A standout win: in collaboration with the global R&D team, I secured a deal for a <em>"first of its kind" product launch</em> in the Indian market — navigating technical, commercial, and stakeholder complexity simultaneously. I also devised a full GTM strategy for a new product in cooperation with Factory, Marketing, Sales, and Engineering teams. On process innovation, I used data and prompt engineering to create a formula that cuts quote generation time by 75%, and I am currently building a <strong>web application</strong> to kick-start the digitalisation of Kadant's service operations.
+      </p>
+      <div class="career-wins">
+        <div class="win-card"><div class="win-num">60%</div><div class="win-desc">YoY revenue growth</div></div>
+        <div class="win-card"><div class="win-num">120%</div><div class="win-desc">Of 2025 target — in progress</div></div>
+        <div class="win-card"><div class="win-num">75%</div><div class="win-desc">Faster quotation turnaround</div></div>
+      </div>
+      <div class="brand-grid">
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=itcportal.com&sz=64" alt="ITC"><span>ITC</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=emamigroup.com&sz=64" alt="Emami"><span>Emami</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=tetrapak.com&sz=64" alt="Tetra Pak"><span>Tetra Pak</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=huhtamaki.com&sz=64" alt="Huhtamaki"><span>Huhtamaki</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=visygroup.com&sz=64" alt="Visy Paper"><span>Visy Paper</span></div>
+        <div class="brand-logo no-img"><span>WARAQ</span></div>
+        <div class="brand-logo no-img"><span>MEPCO</span></div>
+        <div class="brand-logo no-img"><span>RAPP</span></div>
+        <div class="brand-logo no-img"><span>IKPP</span></div>
+        <div class="brand-logo no-img"><span>Hiang Seng</span></div>
+        <div class="brand-logo no-img"><span>Gayatrishakti</span></div>
+        <div class="brand-logo no-img"><span>Andal</span></div>
+        <div class="brand-logo no-img"><span>Lemit</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-item reveal">
+    <div class="career-left">
+      <div class="career-company">Tetra Pak India</div>
+      <div class="career-period">Jun 2022 — Jan 2024</div>
+      <div class="career-role">Business Development Manager</div>
+    </div>
+    <div class="career-right">
+      <p class="career-narrative">
+        Tetra Pak's India BDM role demanded someone who could operate in a complex, consultative environment — winning capex decisions from finance-conscious FMCG brands while managing an active portfolio of India's most significant food and beverage accounts. <strong>The challenge wasn't just to sell — it was to become commercially indispensable to the customer.</strong>
+      </p>
+      <p class="career-narrative">
+        I led a <strong>6-member customer success team</strong> to onboard 20+ new target brands — delivering 200% above the onboarding target. As Growth Manager for 15+ emerging accounts, I delivered <em>annual revenue greater than ₹20 Crores</em> with 30% YoY growth by redesigning prospect prioritisation and workflow management. Two capital sales deals totalled ₹35 Crores — closed through consultative, value-led selling, not discounting.
+      </p>
+      <p class="career-narrative">
+        I headed the cross-selling initiative across India — generating ₹10 Crores in 2022 with ₹1 Crore recurring annual revenue, scaling to <strong>₹18 Crores total in 2023.</strong> New product strategies I drove led to 50% additional volume for 4 emerging accounts in 2023, adding ~₹11 Crores in sales. The ₹100 Cr+ prospect pipeline I built achieved a <strong>95% hit rate across businesses in the first year</strong> — the result of implementing cross-functional team processes that gave the pipeline real commercial discipline.
+      </p>
+      <div class="career-wins">
+        <div class="win-card"><div class="win-num">₹35Cr</div><div class="win-desc">Capital deals closed</div></div>
+        <div class="win-card"><div class="win-num">₹18Cr</div><div class="win-desc">Cross-sell revenue, 2023</div></div>
+        <div class="win-card"><div class="win-num">95%</div><div class="win-desc">Pipeline hit rate, year one</div></div>
+      </div>
+      <div class="brand-grid">
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=parleagro.com&sz=64" alt="Parle Agro"><span>Parle Agro</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=amul.com&sz=64" alt="AMUL"><span>AMUL</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=hul.co.in&sz=64" alt="HUL"><span>HUL</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=generalmills.com&sz=64" alt="General Mills"><span>General Mills</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=epigamia.com&sz=64" alt="Epigamia"><span>Epigamia</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=rawpressery.com&sz=64" alt="Raw Pressery"><span>Raw Pressery</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=zyduslife.com&sz=64" alt="Zydus"><span>Zydus</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=marriott.com&sz=64" alt="Marriott"><span>Marriott</span></div>
+        <div class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=baskinrobbins.com&sz=64" alt="Baskin Robbins"><span>Baskin Robbins</span></div>
+        <div class="brand-logo no-img"><span>Weikfield</span></div>
+        <div class="brand-logo no-img"><span>Urban Platter</span></div>
+        <div class="brand-logo no-img"><span>Govind Dairy</span></div>
+        <div class="brand-logo no-img"><span>RICH</span></div>
+        <div class="brand-logo no-img"><span>Papel</span></div>
+        <div class="brand-logo no-img"><span>Sonai Dairy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-item reveal">
+    <div class="career-left">
+      <div class="career-company">Tetra Pak India</div>
+      <div class="career-period">Nov 2020 — Jun 2022</div>
+      <div class="career-role">Management Associate, Leadership Team Office</div>
+    </div>
+    <div class="career-right">
+      <p class="career-narrative">
+        Selected for Tetra Pak's <strong>Future Talent Leadership Program</strong> — a competitive two-year rotation-based cohort designed for high-potential individuals working directly with local and global leadership teams on cross-functional and international projects.
+      </p>
+      <p class="career-narrative">
+        Conducted retail and consumer research across <strong>450+ outlets</strong> in Delhi, UP, and Gujarat for Parle Agro's SMOODH launch — building the category intelligence that informed go-to-market targeting and improved ROI per shop. Also contributed to post-launch analysis for a major dairy player in West Bengal, which led to a <em>collaboration with Disney</em> for their range of milkshakes. Supported strategic planning for AMUL's product launch — one of the biggest dairy launches in India for an FMCG company with ₹715+ Crore in turnover.
+      </p>
+      <p class="career-narrative">
+        Supported execution of Parle Agro's <em>₹100+ Crore greenfield project</em>, giving me early exposure to how major FMCG brands make infrastructure and commercialisation decisions at scale. Contributed to product innovation and category insights seminars for two key customers using business intelligence platforms. This role taught me to think at the strategic planning level — the commercial logic that drives large capital decisions. It's why I now write proposals that speak the language of CFOs, not just procurement teams.
+      </p>
+    </div>
+  </div>
+
+  <div class="career-item reveal">
+    <div class="career-left">
+      <div class="career-company">Hero MotoCorp</div>
+      <div class="career-period">Apr 2019 — Jun 2019</div>
+      <div class="career-role">Strategy Internship · Baroda</div>
+    </div>
+    <div class="career-right">
+      <p class="career-narrative">
+        Worked with the world's largest two-wheeler manufacturer to understand the micro-level factors influencing consumer buying behaviour at the showroom level — and translate that intelligence into a sharper frontline sales experience.
+      </p>
+      <p class="career-narrative">
+        Surveyed <strong>300+ two-wheeler owners</strong> and visited 20+ showrooms across Gujarat. The consumer data informed a redesigned sales pitch for frontline executives — grounded in real need analysis rather than product features. I then personally trained and motivated showroom executives on the new pitch across the region.
+      </p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how">
+  <div class="section-intro reveal">
+    <div class="eyebrow">Commercial approach</div>
+    <h2>How I try to work</h2>
+    <p class="section-lead">A few principles I've picked up over the years — some learned the hard way, all shaped by real situations.</p>
+  </div>
+  <div class="how-grid reveal">
+    <div class="how-card">
+      <div class="how-n">Principle 01</div>
+      <h3>Understand the business before pitching</h3>
+      <p>I try to spend as much time as possible understanding what a customer is actually trying to achieve before talking about solutions. The conversations tend to go much better that way.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-n">Principle 02</div>
+      <h3>Keep the pipeline honest</h3>
+      <p>A clean, well-qualified pipeline is more valuable than a large, inflated one. The Prospect Qualification Forum I built at Kadant came from a simple belief: it's better to know the truth early than to be surprised later.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-n">Principle 03</div>
+      <h3>Bring the right people in early</h3>
+      <p>The best commercial outcomes I've been part of involved aligning R&D, engineering, and supply chain well before a proposal was written. It takes more effort upfront, but it almost always leads to a better outcome.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-n">Principle 04</div>
+      <h3>Let data do the convincing</h3>
+      <p>Whether it was outlet-level research for Parle Agro or account prioritisation at Kadant — I've found that decisions backed by data are easier to defend and more likely to stick.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-n">Principle 05</div>
+      <h3>Think about the next chapter, not just the renewal</h3>
+      <p>I try to be thinking about where an account could go next — new categories, adjacent geographies, cross-sell opportunities — well before the current contract becomes the focus of conversation.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-n">Principle 06</div>
+      <h3>Take ownership of the outcome</h3>
+      <p>P&L accountability has taught me to stay close to the numbers — to forecast carefully and flag problems early rather than hoping things work out. It's a habit I've come to value a lot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="section-intro reveal">
+    <div class="eyebrow">Sectoral knowledge</div>
+    <h2>Where I have genuine depth</h2>
+    <p class="section-lead">Not surface familiarity. Real commercial experience — knowing the accounts, the buying cycles, and the business pressures in each vertical.</p>
+  </div>
+  <div class="ind-grid reveal">
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">Dairy</div>
+      <div class="ind-desc">AMUL, Govind, Sonai, Epigamia — from cooperative scale to premium D2C</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">Beverages</div>
+      <div class="ind-desc">Parle Agro, Raw Pressery, RICH — jNSD, functional, and aseptic formats</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">FMCG</div>
+      <div class="ind-desc">HUL, General Mills, Weikfield — large-scale commercial buying environments</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">Process Industry</div>
+      <div class="ind-desc">Paper, packaging, industrial processing — ITC, Emami, Huhtamaki</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">APAC Markets</div>
+      <div class="ind-desc">India, Southeast Asia, ANZ — active deal management today</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">MEA Markets</div>
+      <div class="ind-desc">Middle East, MENA — WARAQ, MEPCO, RAPP regional accounts</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">Strategic Sales</div>
+      <div class="ind-desc">Capital, after-sales, cross-sell — multi-year commercial cycles</div>
+    </div>
+    <div class="ind-item">
+      <div class="ind-dot"></div>
+      <div class="ind-name">Key Account Management</div>
+      <div class="ind-desc">CXO engagement, structured account plans, expansion-led retention</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK SCAN -->
+<section id="scan">
+  <div class="section-intro reveal">
+    <div class="eyebrow">Recruiter mode</div>
+    <h2>The quick scan</h2>
+    <p class="section-lead">Everything you need, in under 60 seconds.</p>
+  </div>
+  <div class="scan-grid reveal">
+    <div class="scan-item">
+      <div class="scan-q">Experience</div>
+      <div class="scan-a">5.5 Years</div>
+      <div class="scan-sub">B2B commercial, FMCG & industrial</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Industries</div>
+      <div class="scan-a">FMCG · Dairy · Beverage · Process</div>
+      <div class="scan-sub">Deep ecosystem fluency, not surface familiarity</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Geography</div>
+      <div class="scan-a">India, APAC & MEA</div>
+      <div class="scan-sub">10 international markets, active today</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Revenue ownership</div>
+      <div class="scan-a">₹100 Cr+ pipeline</div>
+      <div class="scan-sub">Capital, after-sales, and cross-sell portfolios</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Sales style</div>
+      <div class="scan-a">Value-based · Consultative</div>
+      <div class="scan-sub">ROI-anchored, business-case-led selling</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Team leadership</div>
+      <div class="scan-a">7 + 5 member teams</div>
+      <div class="scan-sub">Cross-functional team + agent network, Kadant</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Education</div>
+      <div class="scan-a">PGDM Marketing</div>
+      <div class="scan-sub">IMT Ghaziabad + B.Com BFSI, Ahmedabad University</div>
+    </div>
+    <div class="scan-item">
+      <div class="scan-q">Location</div>
+      <div class="scan-a">Pune, India</div>
+      <div class="scan-sub">Open to relocation and international roles</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="section-intro reveal">
+    <div class="eyebrow">The person behind the profile</div>
+    <h2>Character & mindset</h2>
+    <p class="section-lead">Strong commercial performers are built from strong personal foundations.</p>
+  </div>
+  <div class="leader-layout reveal">
+    <div class="trait-list">
+      <div class="trait">
+        <div class="trait-icon-wrap">🎯</div>
+        <div>
+          <h4>Focused on outcomes</h4>
+          <p>I try to keep things simple — understand what success looks like, work backwards from there, and stay honest about progress. Measuring effort over results has never made much sense to me.</p>
+        </div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon-wrap">🧩</div>
+        <div>
+          <h4>Building things that last</h4>
+          <p>I get a lot of satisfaction from creating systems and processes that keep working after the moment has passed. The Prospect Qualification Forum at Kadant is a good example — it was built for the team, not just for me.</p>
+        </div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon-wrap">🌐</div>
+        <div>
+          <h4>Respecting different contexts</h4>
+          <p>Working across APAC and MEA has been one of the most humbling parts of my career. Every market has taught me that listening carefully and adapting genuinely matters more than any technique.</p>
+        </div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon-wrap">💬</div>
+        <div>
+          <h4>Communicating clearly</h4>
+          <p>I'm comfortable in a boardroom and on a factory floor — and I think the ability to translate between the two is something I've worked hard to develop, because that's often where real progress happens.</p>
+        </div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon-wrap">📈</div>
+        <div>
+          <h4>Always learning</h4>
+          <p>PGDM from IMT Ghaziabad gave me a solid foundation, but the more useful education has been on the job — and outside it too, including building and doing SEO for a live bakery website (<a href="https://www.bakeadiem.in/" target="_blank" style="color:var(--green)">bakeadiem.in</a>).</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="football-card">
+        <div>
+          <div class="football-eyebrow">Outside the office</div>
+          <div class="football-title">Football — State & National level</div>
+        </div>
+        <div>
+          <div class="football-big">15+</div>
+          <div class="football-sub">Tournament wins over 10 years</div>
+          <div class="football-body">
+            Captained my school and university teams and represented Ahmedabad at state level and Gujarat at national level. Football taught me more about <strong>working with people, handling pressure, and staying humble in victory</strong> than anything else. Those lessons show up at work every day.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner reveal">
+    <div class="eyebrow" style="justify-content:center">Let's talk</div>
+    <h2 class="contact-cta">Happy to have<br>a <em>conversation.</em></h2>
+    <p class="contact-sub">
+      If something here resonates and you think there could be a good fit — for a KAM, AM, or BDM role in FMCG, beverages, flavours, or packaging — I'd genuinely welcome the conversation.
+    </p>
+    <div class="contact-actions">
+      <a href="mailto:parth.kukkar7@gmail.com" class="btn btn-primary">Send an email</a>
+      <a href="https://www.linkedin.com/in/parth-kukkar-08a933136/" target="_blank" class="btn btn-outline">View LinkedIn ↗</a>
+      <a href="tel:+919818240260" class="btn btn-outline">+91 98182 40260</a>
+    </div>
+    <div class="contact-details">
+      <a href="mailto:parth.kukkar7@gmail.com">parth.kukkar7@gmail.com</a>
+      <span style="color:var(--ink3);font-size:13px">Pune 411045, Maharashtra</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Parth Kukkar · Strategic Account Manager</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/parth-kukkar-08a933136/" target="_blank">LinkedIn</a>
+    <a href="mailto:parth.kukkar7@gmail.com">Email</a>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+/* Logo fallback — if direct favicon fails, try Google's favicon service */
+document.querySelectorAll('.brand-logo img').forEach(img => {
+  img.addEventListener('error', function() {
+    const domain = this.src.replace('https://www.','').replace('https://','').split('/')[0];
+    const googleUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
+    if (!this.src.includes('google.com/s2')) {
+      this.src = googleUrl;
+    } else {
+      this.style.display = 'none';
+    }
+  });
+});
+
+/* Reveal on scroll */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      e.target.style.transitionDelay=(i*0.06)+'s';
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* KPI counter + bar */
+const kpiObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const numEl=e.target.querySelector('[data-target]');
+    const fill=e.target.querySelector('.kpi-fill');
+    if(numEl){
+      const t=parseInt(numEl.dataset.target);
+      const span=numEl.querySelector('span');
+      let c=0;const step=Math.ceil(t/40);
+      const timer=setInterval(()=>{c=Math.min(c+step,t);span.textContent=c;if(c>=t)clearInterval(timer);},30);
+    }
+    if(fill){setTimeout(()=>{fill.style.width=fill.dataset.w+'%';},150);}
+    kpiObs.unobserve(e.target);
+  });
+},{threshold:0.3});
+document.querySelectorAll('.kpi-item').forEach(c=>kpiObs.observe(c));
+
+/* Nav scroll */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);
+});
+
+/* Mobile menu */
+const ham=document.getElementById('ham');
+const links=document.getElementById('navLinks');
+ham.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</body>
+</html>
